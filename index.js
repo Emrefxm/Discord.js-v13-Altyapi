@@ -5,7 +5,7 @@ const client = global.client = new Client({	allowedMentions: { parse: ['users', 
 });
 const set = require("./settings.json");
 
-client.login(set.token);
+client.login(set.token).catch(err => {console.error("The token is incorrect or you forgot to enter the token!")});
 
 client.commands = new Collection();
 const { readdirSync } = require("fs");   
